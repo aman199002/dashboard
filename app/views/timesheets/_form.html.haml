@@ -1,0 +1,33 @@
+= simple_nested_form_for @timesheet do |f|
+  - if @timesheet.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@timesheet.errors.count, "error")
+        prohibited this timesheet from being saved:
+      %ul
+        - @timesheet.errors.full_messages.each do |msg|
+          %li= msg
+  = f.input :user_id, :as => 'hidden'
+  .fields
+    .row-fluid
+      .span1
+        = f.label :date
+      .span2  
+        = f.text_field :date, class: 'datepicker',:'data-date-format' => "dd-mm-yyyy"
+  = f.simple_fields_for :tasks do |task_form|
+    .fields
+      .row
+        .span3
+          = task_form.association :project
+        .span3
+          = task_form.association :task_type
+        .span3
+          = task_form.input :description, input_html: {rows: '1' }  
+        .span3
+          = task_form.input :time_spent, :label=>"Time Spent(in minutes)"
+      .row        
+        = task_form.link_to_remove "Remove this task", :class => "btn btn-danger pull-right"
+  %p
+    = f.link_to_add "Add a task", :tasks
+  .actions
+    = f.submit 'Submit', :class=> "btn btn-success"
