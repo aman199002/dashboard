@@ -1,22 +1,7 @@
 /= link_to 'Generate Timesheet', new_timesheet_path, :class => 'pull-right btn' 
-%div.well
-  = form_for @search, :url => timesheets_path, :html => {:method => :get} do |f|     
-    .row
-      .span3
-        = f.label :user_name_contains
-        = f.text_field :user_name_contains    
-      .span3
-        = f.label :date_greater_than_or_equal_to, 'Start Date'
-        = f.text_field :date_greater_than_or_equal_to, class: 'datepicker',:'data-date-format' => "dd-mm-yyyy"
-      .span3
-        = f.label :date_less_than_or_equal_to, 'End Date'
-        = f.text_field :date_less_than_or_equal_to, class: 'datepicker',:'data-date-format' => "dd-mm-yyyy"
-    %br  
-    = f.submit 'Search'
-    = link_to 'Reset', timesheets_path, class: 'btn'
-
+%h1 All Timesheets
+= render 'search'
 = paginate @timesheets, window: 2
-%h1 Listing timesheets
 %br
 - @timesheets.each do |timesheet|  
   .timesheet

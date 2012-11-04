@@ -2,10 +2,8 @@ class TimesheetsController < ApplicationController
   before_filter :authenticate_user!
   
   def index  
-    @search = Timesheet.search(params[:search])
-    #debugger
-    #@timesheets = Timesheet.page(params[:page]).per(1)
-    @timesheets = @search.page(params[:page]).per(10)
+    @search = Timesheet.search(params[:search])    
+    @timesheets = @search.order('date DESC').page(params[:page]).per(10)
     respond_to do |format|
       format.html
       format.json { render json: @timesheets }
