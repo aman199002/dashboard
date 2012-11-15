@@ -15,6 +15,7 @@ gem "simple_form"
 gem 'kaminari'
 gem "meta_search"
 gem 'bootstrap-datepicker-rails'
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

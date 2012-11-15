@@ -3,7 +3,7 @@ class TimesheetsController < ApplicationController
   
   def index  
     @search = Timesheet.search(params[:search])    
-    @timesheets = @search.order('date DESC').page(params[:page]).per(10)
+    @timesheets = @search.order('date DESC').page(params[:page]).per(4)
     respond_to do |format|
       format.html
       format.json { render json: @timesheets }

@@ -1,5 +1,5 @@
 namespace :insert_data do
-  desc "find_or_create_by_name Projects"
+  desc "Find or create new Projects"
   task :projects => :environment do    
   	Project.find_or_create_by_name('First')
   	Project.find_or_create_by_name('Second')
@@ -9,7 +9,7 @@ namespace :insert_data do
   	Project.find_or_create_by_name('Others')
   end
 
-  desc "find_or_create_by_name Task Types"
+  desc "Find or create new Task Types"
   task :task_types => :environment do    
   	TaskType.find_or_create_by_name('Analysis')
   	TaskType.find_or_create_by_name('Coding')

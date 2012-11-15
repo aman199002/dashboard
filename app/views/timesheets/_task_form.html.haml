@@ -1,0 +1,12 @@
+.fields
+  .row
+    .span3
+      = f.association :project
+    .span3
+      = f.association :task_type
+    .span3
+      = f.input :description, input_html: {rows: '1' }  
+    .span3
+      = f.input :time_spent, :label=>"Time Spent(in minutes)"
+  .row        
+    = f.link_to_remove "Remove this task", :class => "btn btn-danger pull-right"
