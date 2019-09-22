@@ -119,7 +119,7 @@ GEM
     multi_xml (0.5.1)
     mysql2 (0.3.11)
     nested_form (0.3.0)
-    newrelic_rpm (3.5.2.17)
+    newrelic_rpm (3.5.3.24)
     nokogiri (1.5.5)
     orm_adapter (0.4.0)
     pg (0.14.1)
