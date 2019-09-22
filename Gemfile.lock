@@ -70,7 +70,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    ffi (1.1.5)
+    ffi (1.11.1)
     guard (1.5.3)
       listen (>= 0.4.2)
       lumberjack (>= 1.0.2)
